@@ -4,25 +4,25 @@
 main:
 	push rbp
 	mov rbp, rsp
-	sub rsp, 4		#r
-	mov edi, 0		#paraméter: NULL
-	call time		#time(NULL)
-	mov edi, eax	#a visszatérési érték a következő hívás paramétere
-	call srand		#srand(time(NULL))
-	call rand		#rand()
+	sub rsp, 4			#r
+	mov edi, 0			#paraméter: NULL
+	call time			#time(NULL)
+	mov edi, eax			#a visszatérési érték a következő hívás paramétere
+	call srand			#srand(time(NULL))
+	call rand			#rand()
 	mov DWORD PTR[rbp-4], eax	#r = rand()
-	mov ecx, 2				#ecx = 2 (a vizsgálathoz)
-	cdq						#eax -> edx:eax
-	idiv ecx				#eax = eax/ecx, edx = eax%ecx
-	cmp edx, 0				# edx == 0
+	mov ecx, 2			#ecx = 2 (a vizsgálathoz)
+	cdq				#eax -> edx:eax
+	idiv ecx			#eax = eax/ecx, edx = eax%ecx
+	cmp edx, 0			# edx == 0
 	jne FALSE
-	mov edi, 84				#paraméter: 'T'
+	mov edi, 84			#paraméter: 'T'
 	jmp OUT
 FALSE:
-	mov edi, 70				#paraméter: 'F'	
+	mov edi, 70			#paraméter: 'F'	
 OUT:
 	call putchar			#putchar() - paraméter EDI-ben
-	mov edi, 10				#'\n'
+	mov edi, 10			#'\n'
 	call putchar			#putchar('\n')
 	mov eax, DWORD PTR[rbp-4]	#eax = r
 	mov rsp, rbp
