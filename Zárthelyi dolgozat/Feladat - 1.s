@@ -9,8 +9,8 @@ main:
         push    rbp
         mov     rbp, rsp
         sub     rsp, 18
-        mov     DWORD PTR[rbp-4], edi #argc
-        mov     QWORD PTR[rbp-12], rsi #argv (sztring kezdőcíme)
+        mov     DWORD PTR[rbp-4], edi           #argc
+        mov     QWORD PTR[rbp-12], rsi          #argv (sztring kezdőcíme)
         mov     eax, DWORD PTR[rbp-4]
 
         mov     esi, eax
