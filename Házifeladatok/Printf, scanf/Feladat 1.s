@@ -1,5 +1,4 @@
 # Írjunk  egy  programot,  mely  bekér  a  billentyűzetről  két  egész  számot, majd  kiírja  a képernyőre az összegüket! 
-# Magyar Melinda Barbara - E5JCB7
 
         .intel_syntax noprefix
         .section    .rodata
