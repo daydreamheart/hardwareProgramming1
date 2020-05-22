@@ -18,7 +18,7 @@ minOf3:
         mov     eax, DWORD PTR[rbp-4]
         mov     ebx, DWORD PTR[rbp-8]
         cmp     eax, ebx
-        jl      else                   # ha a > b akkor ELSE-re ugrik és az a > c-t vizsgálja
+        jl      else                    # ha a > b akkor ELSE-re ugrik és az a > c-t vizsgálja
 
         mov     eax, ebx
 
